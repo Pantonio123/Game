@@ -3,12 +3,14 @@ using UnityEngine;
 
 public class JohnMovement : MonoBehaviour
 {
+    public GameObject bulletPrefab;
     private Rigidbody2D Rigidbody2D;
     private Animator Animator;
     public float Speed;
     public float JumpForce;
     private float Horizontal;
     private bool Grounded;
+    private float LastShoot;
     void Start()
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -35,6 +37,21 @@ public class JohnMovement : MonoBehaviour
         {
             Jump();
         }
+
+        if (Input.GetKey(KeyCode.Space) && Time.time > LastShoot + 0.25f){
+            Shoot();
+            LastShoot = Time.time;
+        }
+    }
+
+    private void Shoot(){
+
+        Vector3 direction;
+        if(transform.localScale.x == 1.0f) direction = Vector2.right;
+        else direction = Vector2.left;
+
+        GameObject bullet = Instantiate(bulletPrefab, transform.position + direction * 0.1f, Quaternion.identity);
+        bullet.GetComponent<Bullet>().SetDirection(direction);
     }
 
     private void Jump()

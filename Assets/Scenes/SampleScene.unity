@@ -425,7 +425,7 @@ Transform:
   m_GameObject: {fileID: 750906913}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.455, y: 1.162, z: 0}
+  m_LocalPosition: {x: -0.151, y: 1.245, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -446,7 +446,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 50
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -507,6 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bda531c1d6465540aa8548f3a543692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8414040248261942122, guid: fc506cb2454656b4bba7a3d6d97ecb85, type: 3}
   Speed: 1
   JumpForce: 150
 --- !u!95 &750906919
